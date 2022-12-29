@@ -85,7 +85,7 @@ class NoteActivity : AppCompatActivity() {
         }
 
         if(binding.noteCreatedAt.text.isNullOrBlank()) {
-            binding.noteCreatedAt.text = DateHelper().getCurrentDate()
+            binding.noteCreatedAt.text = DateHelper.getCurrentDate()
         }
     }
 
@@ -121,7 +121,7 @@ class NoteActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                binding.noteCreatedAt.text = DateHelper().getCurrentDate()
+                binding.noteCreatedAt.text = DateHelper.getCurrentDate()
             }
 
         })

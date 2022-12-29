@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat.getColor
 import com.google.android.material.snackbar.Snackbar
 import com.lasteinsa.noteappmu.core.R
 
-class SnackbarHelper {
+object SnackbarHelper {
     fun infoSnackbar(context: Context, view: View, anchorView: View, text: String) {
         Snackbar.make(view, text, 3000).setAnchorView(anchorView).setBackgroundTint(
             getColor(context, R.color.info)

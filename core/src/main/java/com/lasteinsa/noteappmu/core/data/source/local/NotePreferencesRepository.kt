@@ -13,8 +13,7 @@ class NotePreferencesRepository @Inject constructor(
     private val edit = sharedPreferences.edit()
 
     override fun setTheme(boolean: Boolean) {
-        edit.putBoolean(DARK, boolean)
-        edit.apply()
+        edit.putBoolean(DARK, boolean).apply()
     }
 
     override fun getTheme(): Boolean {
@@ -26,8 +25,7 @@ class NotePreferencesRepository @Inject constructor(
     }
 
     override fun setFirstLaunched() {
-        edit.putBoolean(FIRST_LAUNCH, false)
-        edit.apply()
+        edit.putBoolean(FIRST_LAUNCH, false).apply()
     }
 
     companion object {

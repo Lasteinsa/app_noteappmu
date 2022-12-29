@@ -51,10 +51,13 @@
         tools:listitem="@layout/item_note" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
+        style="@style/Widget.Material3.BottomAppBar"
         android:id="@+id/main_bottom_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        app:fabAlignmentMode="end"
+        app:fabAnchorMode="cradle"
         app:layout_behavior="com.google.android.material.bottomappbar.BottomAppBar$Behavior"
         app:menu="@menu/menu_main"
         app:hideOnScroll="true"/>
@@ -63,6 +66,7 @@
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_anchorGravity="bottom"
         app:layout_anchor="@id/main_bottom_appbar"
         app:srcCompat="@android:drawable/ic_input_add"/>
 

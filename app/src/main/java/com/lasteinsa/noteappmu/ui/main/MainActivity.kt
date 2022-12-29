@@ -3,7 +3,6 @@ package com.lasteinsa.noteappmu.ui.main
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -14,11 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.lasteinsa.noteappmu.R
 import com.lasteinsa.noteappmu.core.domain.model.Note
+import com.lasteinsa.noteappmu.core.ui.NoteAdapter
 import com.lasteinsa.noteappmu.core.utils.CardHelper
 import com.lasteinsa.noteappmu.core.utils.SnackbarHelper
 import com.lasteinsa.noteappmu.databinding.ActivityMainBinding
 import com.lasteinsa.noteappmu.ui.note.NoteActivity
-import com.lasteinsa.noteappmu.core.ui.NoteAdapter
 import com.lasteinsa.noteappmu.ui.setting.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -91,9 +90,9 @@ class MainActivity : AppCompatActivity() {
 
     private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if(result.resultCode == 212) {
-            SnackbarHelper().infoSnackbar(this, binding.root, binding.mainBottomAppbar, "Empty Note Discarded")
+            SnackbarHelper.infoSnackbar(this, binding.root, binding.mainBottomAppbar, "Empty Note Discarded")
         } else if(result.resultCode == 121) {
-            SnackbarHelper().dangerSnackbar(this, binding.root, binding.mainBottomAppbar, "Deleted")
+            SnackbarHelper.dangerSnackbar(this, binding.root, binding.mainBottomAppbar, "Deleted")
         }
     }
 
@@ -134,9 +133,9 @@ class MainActivity : AppCompatActivity() {
                         }
                         noteAdapter.selectedPositions.clear()
                         noteDataSelected.clear()
-                        SnackbarHelper().dangerSnackbar(this, binding.root, binding.mainBottomAppbar, "Deleted")
+                        SnackbarHelper.dangerSnackbar(this, binding.root, binding.mainBottomAppbar, "Deleted")
                     } else {
-                        SnackbarHelper().infoSnackbar(this, binding.root, binding.mainBottomAppbar, "Nothing to delete")
+                        SnackbarHelper.infoSnackbar(this, binding.root, binding.mainBottomAppbar, "Nothing to delete")
                     }
                     true
                 }
